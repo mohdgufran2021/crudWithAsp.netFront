@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Using Api</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color:thistle;">
+    <!-- <div class="bg-info d-flex justify-content-center align-items-center"> -->
+
+    <center>
+        <div class="bg-secondary m-5" style="width: 800px; border: 3px solid lightcyan; border-radius: 20px;">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="bg-dark text-light p-2 mt-5" style="border: 3px solid rosybrown; border-radius: 10px; width: 600px;">
+                        Crud
+                        Operation Using Api(Integration)</h2>
+                </div>
+            </div>
+
+            <div class="row m-5">
+                <div class="col-12">
+                    <h1 class="bg-light text-info mb-2" style="width: 200px;"
+                    id="eid"></h1>
+                </div>
+                <div class="col-12">
+                    <label for="ename" class="form-label">EName:</label>
+                    <input type="text" class="form-control mb-4" style="width: 500px;" value="" id="ename"
+                        onchange="handleChange('esalary')">
+                </div>
+                <div class="col-12">
+                    <label for="ecom" class="form-label">ECompany:</label>
+                    <input type="text" class="form-control mb-4" style="width: 500px;" value="" id="ecom"
+                        onchange="handleChange('esalary')">
+                </div>
+                <div class="col-12">
+                    <label for="ecom" class="form-label">ESalary:</label>
+                    <input type="number" class="form-control mb-4" style="width: 500px;" value="" id="esalary"
+                        onchange="handleChange('esalary')">
+                </div>
+                <div class="col-12">
+                    <label for="estatus" class="form-label">Eestatus:</label>
+                    <input type="text" class="form-control" style="width: 500px;" value="" id="estatus"
+                        onchange="handleChange('esalary')">
+                </div>
+            </div>
+            <input type="button"
+                style="background-color: green; color: aliceblue; padding: 15px; border: 1px solid lavenderblush; border-radius: 20px;"
+                id="submit" value="Submit" onclick="handleSubmit();">
+            <input type="button"
+                style="background-color:darkblue; color:white; padding: 15px; border: 1px solid lavenderblush; border-radius: 20px; margin-bottom: 20px;"
+                id="update" value="Update" onclick="onhandleUpdate();">
+        </div>
+    </center>
+    <!-- </div> -->
+
+
+    <div class="container mt-5">
+        <h2>Data Table</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Company</th>
+                    <th>Employee Salary</th>
+                    <th>Employee Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="data-table">
+                <!-- Data will be appended here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="CoreApiCrud.js"></script>
+</body>
+
+</html>
