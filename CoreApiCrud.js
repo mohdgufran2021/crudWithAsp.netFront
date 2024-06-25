@@ -33,7 +33,7 @@ async function getdata() {
         return data.json();   //COnvert to object
     }).then((objectData) => {
         gvariable = objectData;
-        if(objectData.length ==0){
+        if(objectData.length == 0){
             document.getElementById("out").style.display = "none"
         }
 
