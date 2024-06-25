@@ -33,23 +33,29 @@ async function getdata() {
         return data.json();   //COnvert to object
     }).then((objectData) => {
         gvariable = objectData;
-        //console.log(objectData);
-        var tableData = "";
-        objectData.map((values, index) => {
-            tableData +=
-                `<tr>
-                                    <td>${values.eid}</td>
-                                    <td>${values.empName}</td>
-                                    <td>${values.empCompany}</td>
-                                    <td>${values.empSalary}</td>
-                                    <td>${values.empStatus}</td>
-                                    <td>
-                                        <button onclick="getParameter(${index})">Edit</button> ||
-                                        <button onclick="deletedata(${index})">Delete</button>
-                                    </td>
-                                    <tr>`;
-        });
-        document.getElementById("data-table").innerHTML = tableData;
+        if(objectData.length ==0){
+            document.getElementById("out").style.display = "none"
+        }
+
+        else{
+            var tableData = "";
+
+            objectData.map((values, index) => {
+                tableData +=
+                    `<tr>
+                                        <td>${values.eid}</td>
+                                        <td>${values.empName}</td>
+                                        <td>${values.empCompany}</td>
+                                        <td>${values.empSalary}</td>
+                                        <td>${values.empStatus}</td>
+                                        <td>
+                                            <button onclick="getParameter(${index})">Edit</button> ||
+                                            <button onclick="deletedata(${index})">Delete</button>
+                                        </td>
+                                        <tr>`;
+            });
+            document.getElementById("data-table").innerHTML = tableData;
+        }
     });
 }
 getdata();
